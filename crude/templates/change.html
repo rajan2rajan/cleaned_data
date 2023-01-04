@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    data save sucessfull
+    
+    <table>
+        <tr>
+            <th>topic</th>
+            <th>describe</th>
+            <th>time remaning</th>
+            <th>operation</th>
+        </tr>                    
+            {% for data in form %}                  
+            <tr>                        
+                <td>{{data.topic}}</td>
+                <td>{{data.describe}}</td>
+                <td>{{data.time_remaning}}</td>
+                <td>
+                    <a href="{% url 'edit' data.id %}"><button>edit</button></a>
+                    <a href="{% url 'delete' data.id %}"><button>delete</button></a>
+                </td>
+                
+            </tr>
+            {% endfor %}           
+</table>
+</body>
+</html>
